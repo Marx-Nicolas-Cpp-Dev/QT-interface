@@ -1,0 +1,17 @@
+{
+  "name": "Qt6 GUI Lab",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-24.04",
+  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y qt6-base-dev qt6-base-dev-tools xvfb openbox x11vnc novnc websockify",
+  "postStartCommand": "bash .devcontainer/start-gui.sh",
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "GUI screen (noVNC)",
+      "onAutoForward": "silent",
+      "visibility": "private"
+    }
+  },
+  "containerEnv": {
+    "DISPLAY": ":1"
+  }
+}
